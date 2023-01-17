@@ -1,5 +1,5 @@
 {% set name = "evotorch" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/evotorch-{{ version }}.tar.gz
-  sha256: 9d711f0615ffb1680aacdabe8846aee4011c681dc55b11e92c04b60a7b548b17
+  sha256: b735bafee14bde189a07fea57c10b61330144bd55572693b31173de9033e6fe7
 
 build:
   noarch: python
