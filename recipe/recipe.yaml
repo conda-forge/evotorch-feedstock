@@ -1,0 +1,55 @@
+context:
+  name: evotorch
+  version: 0.3.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/evotorch-${{ version }}.tar.gz
+  sha256: 9d711f0615ffb1680aacdabe8846aee4011c681dc55b11e92c04b60a7b548b17
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - cma
+    - functorch
+    - gym
+    - matplotlib-base
+    - numpy
+    - packaging
+    - pandas
+    - ray-all >=1.0
+    - pytorch >=1.10.2
+
+tests:
+  - python:
+      imports:
+        - evotorch
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pip check
+
+about:
+  summary: EvoTorch is an advanced evolutionary computation library built directly on top of PyTorch, created at NNAISENSE.
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://evotorch.ai
+
+extra:
+  recipe-maintainers:
+    - hadim
