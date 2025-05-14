@@ -1,6 +1,6 @@
 context:
   name: evotorch
-  version: 0.5.1
+  version: "0.6.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/evotorch-${{ version }}.tar.gz
-  sha256: 6cc2d32a7b023ce412e90cfb8a138f855c1de8fd6c616d22bd1c331443b64d9d
+  sha256: a3e9fd7acf1a7506c763ab5baa78f1dd27f4b212d43da3158d1b9a42c7e374b9
 
 build:
   number: 0
