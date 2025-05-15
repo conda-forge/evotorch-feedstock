@@ -1,6 +1,7 @@
 context:
   name: evotorch
   version: "0.6.1"
+  python_min: "3.10"
 
 package:
   name: ${{ name|lower }}
@@ -37,6 +38,7 @@ tests:
       imports:
         - evotorch
       python_version: ${{ python_min }}.*
+      pip_check: true
 
 about:
   summary: EvoTorch is an advanced evolutionary computation library built directly on top of PyTorch, created at NNAISENSE.
