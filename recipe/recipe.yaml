@@ -1,6 +1,7 @@
 context:
   name: evotorch
-  version: "0.6.0"
+  version: "0.6.1"
+  python_min: "3.10"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/evotorch-${{ version }}.tar.gz
-  sha256: a3e9fd7acf1a7506c763ab5baa78f1dd27f4b212d43da3158d1b9a42c7e374b9
+  sha256: 498a21ede6996decc317c8d5dfbcdc5ab2a947f98572bde3eff4806d023840b8
 
 build:
   number: 0
@@ -37,6 +38,7 @@ tests:
       imports:
         - evotorch
       python_version: ${{ python_min }}.*
+      pip_check: true
 
 about:
   summary: EvoTorch is an advanced evolutionary computation library built directly on top of PyTorch, created at NNAISENSE.
